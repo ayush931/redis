@@ -1,6 +1,42 @@
 import Redis from "ioredis";
 const redis = new Redis();
 
+/**
+ * Basic Redis data type -> Stores binary-safe values
+ * Can store: Text, Numbers, JSON, Binary data
+ * Max size per key: 512 MB
+ */
+
+/**
+ * Why Use Redis Strings?
+
+ * Very fast (in-memory), Atomic operations, Simple key–value structure, Supports TTL (expiry), Foundation of most Redis use cases
+ */
+
+/**
+ * When to Use Redis Strings
+ * Use When: OTP storage, Session tokens, API caching, Counters, Feature flags, Distributed locks
+ * Avoid When: Multiple fields → Use Hash, Ordered data → Use ZSET, Queue → Use List / Stream
+ */
+
+/**
+ * | Feature           | String       | Hash                      |
+| ----------------- | ------------  | ----------------------------|
+| Structure         | Single value  | Multiple fields             |
+| Partial update    | ❌            | ✅                          |
+| Memory efficiency | ❌            | ✅ (many fields)            |
+| Field TTL         | ❌            | ❌ (Redis 7+ supports it)   |
+
+ */
+
+/**
+ * Best Practices: Always use TTL for cache/OTP, Use key prefixes, otp, session, cache, Keep values small, Do not store huge JSON blobs, Redis ≠ Primary Database
+ */
+
+/**
+ * Common Mistakes: No expiry on cache, Using string instead of hash, Large data storage, Using Redis as permanent DB
+ */
+
 async function main() {
   const user = {
     name: 'bob',
