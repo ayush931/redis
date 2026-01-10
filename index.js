@@ -20,3 +20,20 @@ redis.get('myKey', (err, result) => {
 redis.get('myKey').then((result) => {
   console.log(result);
 });
+
+/**
+ * Creates a sorted set named sortedSet
+ * Adds members with scores
+ * Redis automatically sorts by score (ascending)
+ */
+
+redis.zadd('sortedSet', 1, 'one', 2, 'docs', 4, 'quatro', 3, 'three');
+
+/**
+ * Fetches elements from index 0 to 3 (inclusive)
+ * Sorted by lowest → highest score
+ * Includes scores along with members
+ */
+redis.zrange('sortedSet', 0, 3, 'WITHSCORES').then((element) => {
+  console.log(element)
+})
