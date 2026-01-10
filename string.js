@@ -10,13 +10,28 @@ const redis = new Redis();
 /**
  * Why Use Redis Strings?
 
- * Very fast (in-memory), Atomic operations, Simple key–value structure, Supports TTL (expiry), Foundation of most Redis use cases
+ * Very fast (in-memory) 
+ * Atomic operations
+ * Simple key–value structure
+ * Supports TTL (expiry)
+ * Foundation of most Redis use cases
  */
 
 /**
  * When to Use Redis Strings
- * Use When: OTP storage, Session tokens, API caching, Counters, Feature flags, Distributed locks
- * Avoid When: Multiple fields → Use Hash, Ordered data → Use ZSET, Queue → Use List / Stream
+
+ * Use When:
+
+ * OTP storage
+ * Session tokens, API caching
+ * Counters, Feature flags
+ * Distributed locks
+ 
+ * Avoid When:
+
+ * Multiple fields -> Use Hash
+ * Ordered data → Use ZSET
+ * Queue → Use List / Stream
  */
 
 /**
@@ -30,11 +45,23 @@ const redis = new Redis();
  */
 
 /**
- * Best Practices: Always use TTL for cache/OTP, Use key prefixes, otp, session, cache, Keep values small, Do not store huge JSON blobs, Redis ≠ Primary Database
+ * Best Practices:
+ 
+ * Always use TTL for cache/OTP
+ * Use key prefixes
+ * otp, session, cache
+ * Keep values small
+ * Do not store huge JSON blobs
+ * Redis ≠ Primary Database
  */
 
 /**
- * Common Mistakes: No expiry on cache, Using string instead of hash, Large data storage, Using Redis as permanent DB
+ * Common Mistakes:
+ 
+ * No expiry on cache
+ * Using string instead of hash
+ * Large data storage
+ * Using Redis as permanent DB
  */
 
 async function main() {
